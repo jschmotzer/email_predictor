@@ -21,9 +21,12 @@ module EmailPredictor
       EMAIL_SAMPLES.each do |name, email|
         all_company_emails[name] = email if match_company_domain?(email)
       end
+      all_company_emails
     end
 
     def find_company_email_patterns
+      #Could be a performance issue if there are a lot of emails.
+      #Maybe limit the sample size
       find_company_emails
       all_company_emails.map do |name, email|
         email_address_parser(name, email).find_email_pattern

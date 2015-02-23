@@ -11,11 +11,10 @@ module EmailPredictor
     def recommend_email_address
       email_address_patterns = email_finder.find_company_email_patterns
 
-      recommended_email_address = email_address_patterns.map do |pattern|
+      email_address_patterns.map do |pattern|
         email = EmailBuilder.new(advisor_name, company_domain, EmailAddressParser.new(advisor_name, company_domain, pattern))
         email.generate_email
       end
-      show_recommendation(recommended_email_address)
     end
 
     def show_recommendation(recommended_email_address)
