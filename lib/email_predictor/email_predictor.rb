@@ -8,6 +8,7 @@ module EmailPredictor
       @company_domain = company_domain 
     end
 
+    #Returns recommended email addresses
     def recommend_email_address
       email_address_patterns = email_finder.find_company_email_patterns
 

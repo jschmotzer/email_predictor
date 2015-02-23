@@ -17,6 +17,7 @@ module EmailPredictor
       @all_company_emails = {}
     end
 
+    #Finds all company emails stored from a given domain address
     def find_company_emails
       EMAIL_SAMPLES.each do |name, email|
         all_company_emails[name] = email if match_company_domain?(email)
@@ -24,8 +25,9 @@ module EmailPredictor
       all_company_emails
     end
 
+    #Parses all stored company emails to find unique email patterns
     def find_company_email_patterns
-      #Could be a performance issue if there are a lot of emails.
+      #Could be a performance issue if there are a lot of emails to iterate through.
       #Maybe limit the sample size
       find_company_emails
       all_company_emails.map do |name, email|
