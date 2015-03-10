@@ -13,20 +13,20 @@ module EmailPredictor
       email_address.split('@').first
     end
 
-    def first_name_dot_last_name(name)
-      name.split(' ').join('.').downcase
+    def first_name_dot_last_name(person)
+      "#{person.first_name}.#{person.last_name}".downcase
     end
 
-    def first_name_dot_last_initial(name)
-      (name.split(' ').first + '.' + name.split(' ').last[0]).downcase
+    def first_name_dot_last_initial(person)
+      "#{person.first_name}.#{person.last_initial}".downcase
     end
 
-    def first_initial_dot_last_name(name)
-      (name.split(' ').first[0] + '.' + name.split(' ').last).downcase
+    def first_initial_dot_last_name(person)
+      "#{person.first_initial}.#{person.last_name}".downcase
     end
 
-    def first_initial_dot_last_initial(name)
-      (name.split(' ').first[0] + '.' + name.split(' ').last[0]).downcase
+    def first_initial_dot_last_initial(person)
+      "#{person.first_initial}.#{person.last_initial}".downcase
     end
 
     #Compares stored email with potential email pattern

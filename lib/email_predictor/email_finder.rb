@@ -4,9 +4,9 @@ module EmailPredictor
     attr_accessor :all_company_emails, :company_domain
 
     EMAIL_SAMPLES = {
-      "John Ferguson" => "john.ferguson@alphasights.com",
-      "Damon Aw" => "damon.aw@alphasights.com",
-      "Linda Li" => "linda.li@alphasights.com",
+      "John Smith" => "john.smith@example.com",
+      "Joe Smith" => "joe.smith@example.com",
+      "Bob Smith" => "bob.smith@example.com",
       "Larry Page" => "larry.p@google.com",
       "Sergey Brin" => "s.brin@google.com",
       "Steve Jobs" => "s.j@apple.com"

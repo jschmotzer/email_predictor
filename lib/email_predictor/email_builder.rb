@@ -11,7 +11,7 @@ module EmailPredictor
 
     #Generates email address from a defined email pattern
     def generate_email
-      formatted_name = email_address_pattern.method(email_address_pattern.pattern).call(target_name)
+      formatted_name = email_address_pattern.method(email_address_pattern.pattern).call(Person.new(target_name))
       construct_email_address(formatted_name)
     end
 

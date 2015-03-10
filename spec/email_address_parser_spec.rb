@@ -2,6 +2,7 @@ describe 'EmailAddressParser' do
 
   before :each do 
     @parser = EmailPredictor::EmailAddressParser.new('Grace Hopper', 'grace.hopper@test.com')
+    @person = EmailPredictor::Person.new('Grace Hopper')
   end
 
   context '#find_email_pattern' do
@@ -19,19 +20,19 @@ describe 'EmailAddressParser' do
 
   context 'parses a name with the correct email pattern' do
     it '#first_name_dot_last_name' do
-      expect(@parser.first_name_dot_last_name(@parser.name)).to eq('grace.hopper')
+      expect(@parser.first_name_dot_last_name(@person)).to eq('grace.hopper')
     end
 
     it '#first_name_dot_last_initial' do
-      expect(@parser.first_name_dot_last_initial(@parser.name)).to eq('grace.h')
+      expect(@parser.first_name_dot_last_initial(@person)).to eq('grace.h')
     end
 
     it '#first_initial_dot_last_name' do
-      expect(@parser.first_initial_dot_last_name(@parser.name)).to eq('g.hopper')
+      expect(@parser.first_initial_dot_last_name(@person)).to eq('g.hopper')
     end
 
     it '#first_initial_dot_last_initial' do
-      expect(@parser.first_initial_dot_last_initial(@parser.name)).to eq('g.h')
+      expect(@parser.first_initial_dot_last_initial(@person)).to eq('g.h')
     end
   end
 

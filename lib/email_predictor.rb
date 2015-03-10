@@ -3,6 +3,7 @@ require_relative 'email_predictor/advisor_importer'
 require_relative 'email_predictor/email_address_parser'
 require_relative 'email_predictor/email_finder'
 require_relative 'email_predictor/email_builder'
+require_relative 'email_predictor/person'
 require_relative 'email_predictor/email_predictor'
 
 advisors = EmailPredictor::AdvisorImporter.new('lib/email_predictor/sample_data/advisors.csv')
